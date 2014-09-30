@@ -1,0 +1,28 @@
+{
+  "name": "AngularDirectives",
+  "version": "1.0.0",
+  "description": "Angular Directives Presentation",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leftofnull/dcc14_2"
+  },
+  "keywords": [
+    "angular",
+    "node",
+    "javascript"
+  ],
+  "author": "Alexander Kahoun",
+  "license": "GPL v3.0",
+  "bugs": {
+    "url": "https://github.com/leftofnull/dcc14_2/issues"
+  },
+  "homepage": "https://github.com/leftofnull/dcc14_2",
+  "dependencies": {
+    "express": "^4.9.5",
+    "jade": "^1.7.0"
+  }
+}
