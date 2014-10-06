@@ -1,0 +1,9 @@
+<div class="contact edit">
+  <label for="contactName">Name:</label>
+  <input type="text" id="contactName" ng-model="person.Name" />
+  <br/>
+  <label for="contactPhone">Phone:</label>
+  <input type="text" id="contactPhone" ng-model="person.Phone" />
+  <br/>
+  <button ng-disabled="!person.Name || !person.Phone">Save</button>
+</div>

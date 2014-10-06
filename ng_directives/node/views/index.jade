@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  input(ng-model="contact.Name")
-  contact(person="contact")
+  contact-editor(persons="persons")
+  div(ng-repeat="p in persons track by $index")
+    contact(person="p")
