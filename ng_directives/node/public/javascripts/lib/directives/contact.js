@@ -9,7 +9,7 @@ angular.module('app.directives.contact', [])
       templateUrl: 'javascripts/lib/templates/contact.html',
       link: function (scope, element, attrs) {
         element.click(function (evt) {
-          console.log(scope.person);
+          scope.$emit('contact-selected', scope.person);
         });
       }
     };

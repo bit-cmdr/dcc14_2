@@ -1,9 +1,10 @@
 angular.module('app.directives.contactEditor', [])
   .directive('contactEditor', function () {
+    var setFromSelect = false;
     return {
       restrict: 'E',
       replace: true,
-      scope: false,
+      scope: true,
       templateUrl: 'javascripts/lib/templates/contactEdit.html',
       link: function (scope, element, attrs) {
         element.find('button').on('click', function (evt) {
@@ -13,13 +14,19 @@ angular.module('app.directives.contactEditor', [])
           var newPerson = scope.person;
           scope.person = {};
           scope.$digest();
-          scope.persons.push(newPerson);
-          scope.$digest();
+          if (!setFromSelect) {
+            scope.persons.push(newPerson);
+            scope.$apply();
+          }
+          setFromSelect = false;
         });
       },
       controller: function ($scope) {
-        if (!$scope.persons) $scope.persons = [];
-        if (!$scope.person) $scope.person = {};
+        $scope.$on('select-contact', function (evt, data) {
+          $scope.person = data;
+          setFromSelect = true;
+          $scope.$digest();
+        });
       }
     }
   });
