@@ -1,6 +1,6 @@
 extends layout
 
 block content
-  contact-editor(persons="persons")
-  div(ng-repeat="p in persons track by $index")
-    contact(person="p")
+  contact-editor
+  div(ng-repeat="contact in contacts track by $index")
+    contact-card(contact="contact")

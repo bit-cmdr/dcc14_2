@@ -1,18 +1,15 @@
 var app = angular.module('app', [
+    'app.contactService',
     'app.directives.contactEditor',
     'app.directives.contact'
-  ]).controller('app.mainController', ['$scope', function ($scope) {
-    $scope.persons = [
-      {
-        Name: 'Alexander Kahoun',
-        Phone: '480-555-5551'
-      },
-      {
-        Name: 'Amber Kahoun',
-        Phone: '480-555-5552'
-      }];
-    $scope.person = {};
-    $scope.$on('contact-selected', function (evt, data) {
-      $scope.$broadcast('select-contact', data);
-    })
+  ]).controller('app.mainController', ['$scope', 'contactService',
+    function ($scope, contactService) {
+      $scope.contacts = contactService.contacts;
+      $scope.$on('contact.selected', function (evt, data) {
+        $scope.$broadcast('contact.select', data);
+      });
+      $scope.$on('contacts.update', function (evt) {
+        $scope.contacts = contactService.contacts;
+        $scope.$digest();
+      });
   }]);

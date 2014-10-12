@@ -1,15 +1,15 @@
 angular.module('app.directives.contact', [])
-  .directive('contact', function(){
+  .directive('contactCard', function(){
     return {
       restrict: 'EA',
       replace: true,
       scope: {
-        person: '='
+        contact: '='
       },
       templateUrl: 'javascripts/lib/templates/contact.html',
       link: function (scope, element, attrs) {
         element.click(function (evt) {
-          scope.$emit('contact-selected', scope.person);
+          scope.$emit('contact.selected', scope.contact);
         });
       }
     };
