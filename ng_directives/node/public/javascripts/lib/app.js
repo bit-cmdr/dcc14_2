@@ -5,11 +5,11 @@ var app = angular.module('app', [
     $scope.persons = [
       {
         Name: 'Alexander Kahoun',
-        Phone: '480-648-8086'
+        Phone: '480-555-5551'
       },
       {
         Name: 'Amber Kahoun',
-        Phone: '480-393-0778'
+        Phone: '480-555-5552'
       }];
     $scope.person = {};
     $scope.$on('contact-selected', function (evt, data) {
