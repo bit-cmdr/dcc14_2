@@ -6,7 +6,7 @@ angular.module('app.directives.contact', [])
       scope: {
         contact: '='
       },
-      templateUrl: 'javascripts/lib/templates/contact.html',
+      templateUrl: 'javascripts/lib/directives/contact/contact.html',
       link: function (scope, element, attrs) {
         element.click(function (evt) {
           scope.$emit('contact.selected', scope.contact);

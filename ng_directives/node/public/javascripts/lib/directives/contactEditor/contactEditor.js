@@ -8,7 +8,7 @@ angular.module('app.directives.contactEditor', [])
         scope: {
           contact: '=?'
         },
-        templateUrl: 'javascripts/lib/templates/contactEdit.html',
+        templateUrl: 'javascripts/lib/directives/contactEditor/contactEdit.html',
         link: function (scope, element, attrs) {
           element.find('button').on('click', function (evt) {
             if (evt && evt.preventDefault)
