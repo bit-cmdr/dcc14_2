@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/Content/Site.css" />
     <script type="text/javascript" src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
-<body>
+<body ng-controller="app.mainController">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -41,6 +41,10 @@
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/respond.js"></script>
     <script src="~/Scripts/angular.min.js"></script>
+    <script src='~/js/contactService.js'></script>
+    <script src='~/js/directives/contact/contact.js'></script>
+    <script src='~/js/directives/contactEditor/contactEditor.js'></script>
+  <script src='~/js/app.js'></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
