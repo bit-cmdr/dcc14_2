@@ -10,7 +10,9 @@ angular.module('app.directives.contactEditor', [])
         },
         transclude: true,
         templateUrl: 'javascripts/lib/directives/contactEditor/contactEdit.html',
-        link: function (scope, element, attrs) {
+        link: function (scope, element, attrs, ctrl, $transclude) {
+          console.log('ctrl', ctrl);
+          console.log('transclude', $transclude);
           element.find('button').on('click', function (evt) {
             if (evt && evt.preventDefault)
               evt.preventDefault();
@@ -23,6 +25,11 @@ angular.module('app.directives.contactEditor', [])
             }
             setFromSelect = false;
           });
+          $transclude(scope, function (myStuff) {
+            element.prepend(myStuff);
+            element.append('<hr/>')
+            console.log('myStuff', myStuff);
+          })
         },
         controller: function ($scope) {
           $scope.$on('contact.select', function (evt, data) {
