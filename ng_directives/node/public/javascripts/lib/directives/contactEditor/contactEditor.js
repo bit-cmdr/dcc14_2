@@ -8,6 +8,7 @@ angular.module('app.directives.contactEditor', [])
         scope: {
           contact: '=?'
         },
+        transclude: true,
         templateUrl: 'javascripts/lib/directives/contactEditor/contactEdit.html',
         link: function (scope, element, attrs) {
           element.find('button').on('click', function (evt) {

@@ -2,5 +2,6 @@ extends layout
 
 block content
   contact-editor
+    h1 Edit/Add a Contact
   div(ng-repeat="contact in contacts track by $index")
     contact-card(contact="contact")
